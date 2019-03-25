@@ -1,8 +1,8 @@
-node
-{
+node {
   git(
-     url: "${libsLocation}",
-     credentialsId: "${githubCreds}"
+    url: "${libsLocation}",
+    credentialsId: "${githubCreds}",
+    branch: "INGDEV-387-update-to-go-1-12"
   )
-  load 'ic/Jenkinsfile'
+  load 'kubernetes-ingress/Jenkinsfile'
 }
