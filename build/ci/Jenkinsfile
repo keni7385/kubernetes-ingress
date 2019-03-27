@@ -2,7 +2,7 @@ node {
   git(
     url: "${libsLocation}",
     credentialsId: "${githubCreds}",
-    branch: "INGDEV-387-update-to-go-1-12"
+    branch: "INGDEV-391-helm-packaging"
   )
   load 'kubernetes-ingress/Jenkinsfile'
 }
