@@ -1,11 +1,12 @@
 FROM nginx:1.15.10
 
 # Enable only error logs on stderr, since access and stream-access are scraped by the nginx logger exporter
-RUN ln -sf /proc/1/fd/2 /var/log/nginx/error.log 
-#	&& ln -sf /proc/1/fd/1 /var/log/nginx/stream-access.log \
-#	&& ln -sf /proc/1/fd/1 /var/log/nginx/access.log
+RUN ln -sf /proc/1/fd/2 /var/log/nginx/error.log \
+	&& ln -sf /proc/1/fd/1 /var/log/nginx/stream-access.log \
+	&& ln -sf /proc/1/fd/1 /var/log/nginx/access.log
 
-COPY nginx-ingress internal/configs/version1/nginx.ingress.tmpl internal/configs/version1/nginx.tmpl /
+COPY nginx-ingress internal/configs/version1/nginx.ingress.tmpl internal/configs/version1/nginx.tmpl internal/configs/version2/fix-nginxlogs.sh /
+RUN chmod +x fix-nginxlogs.sh
 
 COPY prometheus-nginxlog-exporter internal/configs/version2/prometheus-nginxlog-exporter-config.hcl /
 RUN chmod +x prometheus-nginxlog-exporter
