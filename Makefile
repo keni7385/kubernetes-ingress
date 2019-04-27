@@ -17,8 +17,8 @@ DOCKER_BUILD_OPTIONS =
 
 GIT_COMMIT=$(shell git rev-parse --short HEAD)
 
-NGINXLOG_EXPORTER_VERSION = v1.2.1
-NGINXLOG_EXPORTER_URL = "https://github.com/martin-helmich/prometheus-nginxlog-exporter/releases/download/${NGINXLOG_EXPORTER_VERSION}/prometheus-nginxlog-exporter"
+NGINXLOG_EXPORTER_VERSION = v1.2.1-patch-buckets
+NGINXLOG_EXPORTER_URL = "https://github.com/keni7385/prometheus-nginxlog-exporter/releases/download/${NGINXLOG_EXPORTER_VERSION}/prometheus-nginxlog-exporter"
 
 nginx-ingress:
 ifeq ($(BUILD_IN_CONTAINER),1)
