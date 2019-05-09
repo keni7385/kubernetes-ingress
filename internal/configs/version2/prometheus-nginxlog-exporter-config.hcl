@@ -11,6 +11,6 @@ namespace "nginx_exp" {
   labels {
     app = "nginx-ingress-app"
   }
-  upstream_seconds_hist_bucket = [.05, .25, .5, .75, 1, 1.25, 1.5, 2.0, 2.5, 5, 10]
-  response_seconds_hist_bucket = [.05, .25, .5, .75, 1, 1.25, 1.5, 2.0, 2.5, 5, 10]
+  upstream_seconds_hist_bucket = [.01, .05, .10, .15, .20, .25, .3, .35, .4, .45, .5, .55, .6, .65, .7, .75, .8, 1, 1.25, 1.5, 2.0, 2.5, 5, 10]
+  response_seconds_hist_bucket = [.01, .05, .10, .15, .20, .25, .3, .35, .4, .45, .5, .55, .6, .65, .7, .75, .8, 1, 1.25, 1.5, 2.0, 2.5, 5, 10]
 }
